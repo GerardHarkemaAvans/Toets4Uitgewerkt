@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+
+  <node name="gear_part_0_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x 0.55 -y 1.3 -z 0.7 -sdf -model gear_part_0 -file $(find casus_support)/meshes/part/gear_part/model.sdf"/>
+
+  <node name="gasket_part_0_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x 0.55 -y 0.9 -z 0.7 -sdf -model gasket_part_0 -file $(find casus_support)/meshes/part/gasket_part/model.sdf"/>
+
+  <node name="piston_rod_part_0_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x 0.55 -y 0.5 -z 0.7 -sdf -model piston_rod_part_0 -file $(find casus_support)/meshes/part/piston_rod_part/model.sdf"/>
+
+
+</launch>

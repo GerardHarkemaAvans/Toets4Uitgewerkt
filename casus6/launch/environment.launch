@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="true"/> 
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="rviz" default = "true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="extra_gazebo_args" default=""/>
+
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find casus_gazebo)/worlds/casus.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
+  </include>
+
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <include file="$(find casus_support)/launch/load_casus.launch"/>
+
+
+  <!-- Start move_group -->
+  <include file="$(find casus_moveit_config)/launch/move_group.launch"/>
+
+
+  <!-- Spawn the URDF objects into Gazebo -->
+  <include file="$(find casus_gazebo)/launch/spawn_static_world_objects.launch"/>
+
+  <!-- Spawn the URDF obstacles objects into Gazebo -->
+<!--
+  <include file="$(find casus_gazebo)/launch/spawn_obstacles.launch"/>
+-->
+
+  <!-- Spawn the Robots into Gazebo -->
+  <include file="$(find casus_gazebo)/launch/spawn_robots.launch"/>
+
+  <!-- Unpause Gazebo -->
+  <node pkg="casus_utilities" type="timed_roslaunch.sh" name="unpause_gazebo" output="screen"
+    args="7 casus_gazebo unpause.launch" />
+
+  <!-- Spawn parts -->
+  <node pkg="casus_utilities" type="timed_roslaunch.sh" name="timed_roslaunch_parts" output="screen"
+    args="4 casus_gazebo spawn_parts_casus5.launch" />
+
+  <!-- Reset World -->
+  <node pkg="casus_utilities" type="timed_roslaunch.sh" name="reset_world" output="screen"
+    args="20 casus_gazebo reset_world.launch" />
+
+  <!-- start joint state publisher -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <rosparam param="source_list">[/robot1/joint_states]</rosparam>
+    <remap from="/joint_states" to="/combined_joint_states"/>
+  </node>
+
+  <!-- starte robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robots_state_publisher">
+    <param name="publish_frequency" type="double" value="50.0"/>
+    <remap from="/joint_states" to="/combined_joint_states"/>
+  </node>
+
+  <!-- Start RVIZ with Gazebo if necessary -->
+  <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(find casus_support)/config/casus.rviz"/>
+
+
+</launch>

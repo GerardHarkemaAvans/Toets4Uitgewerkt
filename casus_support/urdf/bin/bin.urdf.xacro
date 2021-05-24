@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="bin_urdf" params="bin_parent bin_prefix *origin">
+  
+  <joint name="${bin_prefix}joint" type="fixed">
+    <xacro:insert_block name="origin" />
+    <parent link="${bin_parent}"/>
+    <child link="${bin_prefix}origin"/>
+  </joint>
+
+
+    <!-- Links -->
+<!--
+<link name="${bin_parent}"/>
+-->
+    <link name="${bin_prefix}origin">
+      <visual>
+        <geometry>
+          <mesh filename="package://casus_support/meshes/bin/visual/bin.dae" />
+
+        </geometry>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://casus_support/meshes/bin/collision/bin_bottom.dae"/>
+
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://casus_support/meshes/bin/collision/bin_sides.dae"/>
+
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="1.0" ixy="0" ixz="0"
+                 iyy="1.0" iyz="0"
+                 izz="1.0" />
+        <mass value="100" />
+      </inertial>
+    </link>
+<!--
+    <link name="${bin_prefix}drop_point">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="1.0" ixy="0" ixz="0"
+                 iyy="1.0" iyz="0"
+                 izz="1.0" />
+        <mass value="1.0" />
+      </inertial>
+    </link>
+-->
+    <!-- joint list -->
+<!--
+    <joint name="${bin_prefix}joint_1" type="fixed">
+      <origin xyz="0 0 1.0" rpy="0 0 0" />
+      <parent link="${bin_prefix}base_link" />
+      <child link="${bin_prefix}drop_point" />
+    </joint>
+-->
+  </xacro:macro>
+</robot>

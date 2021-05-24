@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="bin" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="bin_prefix" default="bin_1_"/>
+  <xacro:arg name="bin_parent" default="world_interface"/>
+  
+  <xacro:arg name="x" default="0"/>
+  <xacro:arg name="y" default="0"/>
+  <xacro:arg name="z" default="0"/>
+  <xacro:arg name="R" default="0"/>
+  <xacro:arg name="P" default="0"/>
+  <xacro:arg name="Y" default="0"/>
+  
+  <link name="world_interface" />
+  <!-- URDF -->
+  <xacro:include filename="$(find casus_support)/urdf/bin/bin.urdf.xacro"/>
+  <xacro:bin_urdf bin_prefix="$(arg bin_prefix)" bin_parent="$(arg bin_parent)">
+     <origin xyz="$(arg x) $(arg y) $(arg z)" rpy="$(arg R) $(arg P) $(arg Y)"/>
+  </xacro:bin_urdf>
+
+  <!-- Gazebo -->
+  <xacro:include filename="$(find casus_support)/urdf/bin/bin.gazebo.xacro"/>
+  <xacro:bin_gazebo bin_prefix="$(arg bin_prefix)"/>
+
+</robot>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="workshop" value="workshop_"/>
+  <arg name="workshop_parent_name" value="world_interface"/>
+  <arg name="hall_prefix" value="hall_"/>
+  <arg name="hall_parent" value="world_interface"/>
+  <arg name="robot_prefix" value="robot1_"/>
+  <arg name="robot_pedestal" value="robot1_pedestal_"/>
+  <arg name="vacuum_gripper_prefix" value="vacuum_gripper1_"/>
+  <arg name="bin" value="bin_"/>
+  <arg name="as" value="as_"/>
+  <arg name="fs1" value="fs1_"/>
+  <arg name="fs2" value="fs2_"/>
+  <arg name="fc" value="fc_"/>
+  <arg name="dc" value="dc_"/>
+  <arg name="mc" value="mc_"/>
+
+  <!-- Parameters and nodes in the global namespace. -->
+
+
+  <!-- Pedestal -->
+  <param name="$(arg robot_pedestal)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/robot_pedestal/robot_pedestal.xacro' pedestal_prefix:=$(arg robot_pedestal) pedestal_parent:=$(arg workshop_parent_name) pedestal_height:=0.6"/>
+    
+      <node name="$(arg robot_pedestal)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x 0 -y 0 -urdf -model $(arg robot_pedestal) -param $(arg robot_pedestal)description"/>
+
+</launch>

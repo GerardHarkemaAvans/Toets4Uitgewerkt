@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- world -->
+  <link name="world" />
+
+  <!-- workshop -->
+  <xacro:include filename="$(find casus_support)/urdf/workshop/workshop.urdf.xacro"/>
+  <xacro:workshop_urdf workshop_parent="world_interface"/>
+
+  <!-- hall -->
+  <!-- hall -->
+  <xacro:include filename="$(find casus_support)/urdf/hall/hall.urdf.xacro"/>
+  <xacro:hall_urdf hall_parent="world"  hall_prefix="hall_" >
+    <origin xyz="-2.5 0 0.0" rpy="0 0 0"/>
+  </xacro:hall_urdf>
+
+  <!-- Joints -->
+  <joint name="world_interface_to_world" type="fixed">
+    <parent link="world" />
+    <child link="world_interface" />
+  </joint>
+
+
+  <link name="robot1_pedestal_link">
+    <visual>
+      <origin xyz="0 0 0.3" />
+      <geometry>
+        <box size="0.3 0.3 0.6" />
+      </geometry>
+      <material name="robot1_pedestal_color">
+        <color rgba="0 ${40/255} ${134/255} 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="robot1_pedestal_joint" type="fixed">
+    <origin xyz="-4 0 0" />
+    <parent link="world" />
+    <child link="robot1_pedestal_link" />
+  </joint>
+
+  <!-- Plaats hier de macro voor de iiwa robot -->
+  <xacro:include filename="$(find casus2)/urdf/robot/iiwa/iiwa7.xacro"/>
+  <xacro:iiwa7 robot_name="robot1" parent='robot1_pedestal_link'  />
+  <joint name="robot1-robot1_pedestal_joint" type="fixed">
+    <parent link="robot1_pedestal_link" />
+    <child link="robot1_link_0" />
+    <origin xyz="0 0 0.60" rpy="0 0 ${radians(180)}" />
+  </joint>
+
+
+  <!-- Plaats hier de macro voor de gripper -->
+  <!-- gripper1 to robot1. -->
+  <!-- Vacuum Gripper1 -->
+  <xacro:include filename="$(find casus_support)/urdf/vacuum_gripper/vacuum_gripper.urdf.xacro"/>
+  <xacro:vacuum_gripper_urdf prefix="vacuum_gripper1_" joint_prefix="vacuum_gripper1_joint"/>
+  <joint name="gripper1_to_robot1" type="fixed">
+    <parent link="robot1_link_ee" />
+    <child link="vacuum_gripper1_base_link" />
+  </joint>
+
+
+  <!-- Update the below block for assignment 3 here -->
+<!--
+  <xacro:include filename="$(find casus2)/urdf/robot/lrmate200ic_macro.xacro"/>
+  <xacro:fanuc_lrmate200ic prefix="robot1_" joint_limited="true"/>
+  <joint name="robot1-robot1_pedestal_joint" type="fixed">
+    <parent link="robot1_pedestal_link" />
+    <child link="robot1_base_link" />
+    <origin xyz="0 0 0.60" rpy="0 0 ${radians(180)}" />
+  </joint>
+-->
+<!--
+  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro"/>
+  <xacro:ur5_robot prefix="robot1_" joint_limited="true"/>
+  <joint name="robot1-robot1_pedestal_joint" type="fixed">
+    <parent link="robot1_pedestal_link" />
+    <child link="robot1_base_link" />
+    <origin xyz="0 0 0.6" rpy="0 0 ${radians(90)}" />
+  </joint>
+-->
+</robot>

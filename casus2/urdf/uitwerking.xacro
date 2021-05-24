@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- world -->
+    <link name="world" />
+    <link name="world_interface" />
+
+
+    <!-- Joints -->
+    <joint name="world_interface_to_world" type="fixed">
+        <parent link="world" />
+        <child link="world_interface" />
+        <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- hall -->
+    <xacro:include filename="$(find casus_support)/urdf/hall/hall.urdf.xacro"/>
+    <xacro:hall_urdf hall_parent="world_interface"  hall_prefix="hall_" >
+    <origin xyz="-2.5 0 0.0" rpy="0 0 0"/>
+    </xacro:hall_urdf>
+
+    <!-- Assembly Station -->
+    <xacro:include filename="$(find casus_support)/urdf/assembly_station/assembly_station.urdf.xacro"/>
+    <xacro:assembly_station_urdf assembly_station_parent="world_interface" assembly_station_prefix="AS1_" >
+    <origin xyz="-3.25 -1 0" rpy="0 0 3.14"/>
+    </xacro:assembly_station_urdf>
+
+    <!-- Shelf 1 -->
+    <xacro:include filename="$(find casus_support)/urdf/factory_shelf/factory_shelf.urdf.xacro"/>
+    <xacro:factory_shelf_urdf factory_shelf_parent="world_interface" factory_shelf_prefix="FS1_" >
+    <origin xyz="0 0 0" rpy="0 0 3.14"/>
+    </xacro:factory_shelf_urdf>
+
+    <!-- Shelf 2 -->
+    <xacro:factory_shelf_urdf factory_shelf_parent="world_interface" factory_shelf_prefix="FS2_" >
+    <origin xyz="0 -2.2 0" rpy="0 0 3.14"/>
+    </xacro:factory_shelf_urdf>
+
+    <!-- Cage -->
+    <xacro:include filename="$(find casus_support)/urdf/cage_factory/cage_factory.urdf.xacro"/>
+    <xacro:cage_factory_urdf cage_factory_parent="world_interface" cage_factory_prefix="CF1_" >
+    <origin xyz="-4 4 0" rpy="0 0 1.57"/>
+    </xacro:cage_factory_urdf>
+
+    <!-- Mobile Computer -->
+    <xacro:include filename="$(find casus_support)/urdf/computer_mobile/computer.urdf.xacro"/>
+    <xacro:computer_urdf computer_parent="world_interface" computer_prefix="comp_mobile_" >
+    <origin xyz="-3 0.5 0" rpy="0 0 2.1"/>
+    </xacro:computer_urdf>
+
+    <!-- Desktop computer -->
+    <xacro:include filename="$(find casus_support)/urdf/computer_desktop/computer.urdf.xacro"/>
+    <xacro:computer_urdf computer_parent="world_interface" computer_prefix="comp_desktop_" >
+    <origin xyz="-5 -4 0" rpy="0 0 1.57"/>
+    </xacro:computer_urdf>
+
+
+    <!-- Bin -->
+    <xacro:include filename="$(find casus_support)/urdf/bin/bin.urdf.xacro"/>
+    <xacro:bin_urdf bin_parent="world_interface" bin_prefix="bin_" >
+    <origin xyz="-4 -2.5 0" rpy="0 0 0"/>
+    </xacro:bin_urdf>
+
+    <!-- logical camera 1 collision model -->
+    <xacro:include filename="$(find casus_support)/urdf/logical_camera/logical_camera.urdf.xacro"/>
+    <xacro:logical_camera_urdf prefix="logical_camera1_" logical_camera_parent="world_interface">
+    <origin xyz="-3 -1 2.10" rpy="0 1.5708 0"/>
+    </xacro:logical_camera_urdf>
+
+
+  <link name="robot1_pedestal_link">
+    <visual>
+      <origin xyz="0 0 0.4" />
+      <geometry>
+        <box size="0.4 0.4 0.8" />
+      </geometry>
+      <material name="robot1_pedestal_color">
+        <color rgba="0 ${40/255} ${134/255} 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="world_pedestal_joint" type="fixed">
+    <origin xyz="-4 -1.5 0" />
+    <parent link="world" />
+    <child link="robot1_pedestal_link" />
+  </joint>
+  
+  <!-- Plaats hier de macro voor de Fanuc m10ia robot -->
+  <xacro:include filename="$(find casus2)/urdf/robot/m10ia/m10ia_macro.xacro"/>
+  <xacro:fanuc_m10ia prefix="robot1_" />
+  <joint name="robot1_pedestal_joint" type="fixed">
+    <parent link="robot1_pedestal_link" />
+    <child link="robot1_base_link" />
+    <origin xyz="0 0 0.80" rpy="0 0 ${radians(180)}" />
+  </joint>
+  
+  <!-- Plaats hier de macro voor de gripper -->
+  <!-- Vacuum Gripper1 -->
+  <xacro:include filename="$(find casus_support)/urdf/vacuum_gripper/vacuum_gripper.urdf.xacro"/>
+  <xacro:vacuum_gripper_urdf prefix="vacuum_gripper1_" joint_prefix="vacuum_gripper1_joint"/>
+  <joint name="gripper1_to_robot1" type="fixed">
+    <parent link="robot1_tool0" />
+    <child link="vacuum_gripper1_base_link" />
+  </joint>
+  
+
+
+</robot>
