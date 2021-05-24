@@ -31,254 +31,121 @@
     </group_state>
     <group_state name="R1PreGrasp" group="robot1">
         <joint name="robot1_elbow_joint" value="1.12" />
-        <joint name="robot1_shoulder_lift_joint" value="-0.75" />
-        <joint name="robot1_shoulder_pan_joint" value="1.88" />
+        <joint name="robot1_shoulder_lift_joint" value="-1.1976" />
+        <joint name="robot1_shoulder_pan_joint" value="1.0935" />
         <joint name="robot1_wrist_1_joint" value="-1.88" />
         <joint name="robot1_wrist_2_joint" value="-1.57" />
         <joint name="robot1_wrist_3_joint" value="0" />
     </group_state>
     <group_state name="R1Place" group="robot1">
         <joint name="robot1_elbow_joint" value="1.5201" />
-        <joint name="robot1_shoulder_lift_joint" value="-0.7499" />
-        <joint name="robot1_shoulder_pan_joint" value="-0.2229" />
-        <joint name="robot1_wrist_1_joint" value="-2.3308" />
+        <joint name="robot1_shoulder_lift_joint" value="-1.1282" />
+        <joint name="robot1_shoulder_pan_joint" value="-0.8505" />
+        <joint name="robot1_wrist_1_joint" value="-1.9613" />
         <joint name="robot1_wrist_2_joint" value="-1.56775" />
         <joint name="robot1_wrist_3_joint" value="0" />
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="fixed_base1" type="fixed" parent_frame="robot1_base_link" child_link="world" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-    <disable_collisions link1="AS1_origin" link2="CF1_origin" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="FS1_origin" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="FS2_origin" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="bin_origin" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="comp_desktop_origin" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="comp_mobile_origin" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="hall_floor" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="hall_wall1" reason="Never" />
-    <disable_collisions link1="AS1_origin" link2="hall_wall2" reason="Never" />
-    <disable_collisions link1="AS1_origin" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="AS1_origin" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="AS1_origin" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="AS1_origin" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="AS1_origin" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="FS1_origin" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="FS2_origin" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="bin_origin" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="comp_desktop_origin" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="comp_mobile_origin" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="hall_floor" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="hall_wall1" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="hall_wall2" reason="Default" />
-    <disable_collisions link1="CF1_origin" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="CF1_origin" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="CF1_origin" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="FS2_origin" reason="Adjacent" />
-    <disable_collisions link1="FS1_origin" link2="bin_origin" reason="Adjacent" />
-    <disable_collisions link1="FS1_origin" link2="comp_desktop_origin" reason="Adjacent" />
-    <disable_collisions link1="FS1_origin" link2="comp_mobile_origin" reason="Adjacent" />
-    <disable_collisions link1="FS1_origin" link2="hall_floor" reason="Adjacent" />
-    <disable_collisions link1="FS1_origin" link2="hall_wall1" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="hall_wall2" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="FS1_origin" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="FS1_origin" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="FS1_origin" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="bin_origin" reason="Adjacent" />
-    <disable_collisions link1="FS2_origin" link2="comp_desktop_origin" reason="Adjacent" />
-    <disable_collisions link1="FS2_origin" link2="comp_mobile_origin" reason="Adjacent" />
-    <disable_collisions link1="FS2_origin" link2="hall_floor" reason="Adjacent" />
-    <disable_collisions link1="FS2_origin" link2="hall_wall1" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="hall_wall2" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="FS2_origin" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="FS2_origin" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="FS2_origin" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="bin_origin" link2="comp_desktop_origin" reason="Adjacent" />
-    <disable_collisions link1="bin_origin" link2="comp_mobile_origin" reason="Adjacent" />
-    <disable_collisions link1="bin_origin" link2="hall_floor" reason="Adjacent" />
-    <disable_collisions link1="bin_origin" link2="hall_wall1" reason="Never" />
-    <disable_collisions link1="bin_origin" link2="hall_wall2" reason="Never" />
-    <disable_collisions link1="bin_origin" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="bin_origin" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="bin_origin" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="bin_origin" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="bin_origin" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="bin_origin" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="bin_origin" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="comp_mobile_origin" reason="Adjacent" />
-    <disable_collisions link1="comp_desktop_origin" link2="hall_floor" reason="Adjacent" />
-    <disable_collisions link1="comp_desktop_origin" link2="hall_wall1" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="hall_wall2" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="comp_desktop_origin" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="hall_floor" reason="Adjacent" />
-    <disable_collisions link1="comp_mobile_origin" link2="hall_wall1" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="hall_wall2" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="comp_mobile_origin" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="hall_wall1" reason="Adjacent" />
-    <disable_collisions link1="hall_floor" link2="hall_wall2" reason="Adjacent" />
-    <disable_collisions link1="hall_floor" link2="hall_wall3" reason="Adjacent" />
-    <disable_collisions link1="hall_floor" link2="hall_wall4" reason="Adjacent" />
-    <disable_collisions link1="hall_floor" link2="logical_camera1_base_link" reason="Adjacent" />
-    <disable_collisions link1="hall_floor" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="robot1_pedestal_link" reason="Adjacent" />
-    <disable_collisions link1="hall_floor" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="hall_floor" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="hall_wall2" reason="Default" />
-    <disable_collisions link1="hall_wall1" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="hall_wall4" reason="Default" />
-    <disable_collisions link1="hall_wall1" link2="logical_camera1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_pedestal_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall1" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="hall_wall3" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="hall_wall4" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="logical_camera1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_pedestal_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall2" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="hall_wall4" reason="Default" />
-    <disable_collisions link1="hall_wall3" link2="logical_camera1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_pedestal_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall3" link2="vacuum_gripper1_suction_cup" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="logical_camera1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_forearm_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_pedestal_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_shoulder_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="vacuum_gripper1_base_link" reason="Never" />
-    <disable_collisions link1="hall_wall4" link2="vacuum_gripper1_suction_cup" reason="Never" />
+    <disable_collisions link1="container1_origin" link2="conveyor1_origin" reason="Adjacent" />
+    <disable_collisions link1="container1_origin" link2="logical_camera1_base_link" reason="Adjacent" />
+    <disable_collisions link1="container1_origin" link2="robot1_base_link" reason="Never" />
+    <disable_collisions link1="container1_origin" link2="robot1_pedestal_link" reason="Adjacent" />
+    <disable_collisions link1="container1_origin" link2="robot1_shoulder_link" reason="Never" />
+    <disable_collisions link1="container1_origin" link2="yellow_bin1_origin" reason="Adjacent" />
+    <disable_collisions link1="container1_origin" link2="yellow_bin2_origin" reason="Adjacent" />
+    <disable_collisions link1="container1_origin" link2="yellow_bin3_origin" reason="Adjacent" />
+    <disable_collisions link1="container1_origin" link2="yellow_bin4_origin" reason="Adjacent" />
+    <disable_collisions link1="container1_origin" link2="yellow_bin5_origin" reason="Adjacent" />
+    <disable_collisions link1="conveyor1_origin" link2="logical_camera1_base_link" reason="Adjacent" />
+    <disable_collisions link1="conveyor1_origin" link2="robot1_base_link" reason="Never" />
+    <disable_collisions link1="conveyor1_origin" link2="robot1_pedestal_link" reason="Adjacent" />
+    <disable_collisions link1="conveyor1_origin" link2="robot1_shoulder_link" reason="Never" />
+    <disable_collisions link1="conveyor1_origin" link2="yellow_bin1_origin" reason="Adjacent" />
+    <disable_collisions link1="conveyor1_origin" link2="yellow_bin2_origin" reason="Adjacent" />
+    <disable_collisions link1="conveyor1_origin" link2="yellow_bin3_origin" reason="Adjacent" />
+    <disable_collisions link1="conveyor1_origin" link2="yellow_bin4_origin" reason="Adjacent" />
+    <disable_collisions link1="conveyor1_origin" link2="yellow_bin5_origin" reason="Adjacent" />
     <disable_collisions link1="logical_camera1_base_link" link2="robot1_base_link" reason="Never" />
-    <disable_collisions link1="logical_camera1_base_link" link2="robot1_ee_link" reason="Never" />
-    <disable_collisions link1="logical_camera1_base_link" link2="robot1_forearm_link" reason="Never" />
     <disable_collisions link1="logical_camera1_base_link" link2="robot1_pedestal_link" reason="Adjacent" />
     <disable_collisions link1="logical_camera1_base_link" link2="robot1_shoulder_link" reason="Never" />
     <disable_collisions link1="logical_camera1_base_link" link2="robot1_upper_arm_link" reason="Never" />
-    <disable_collisions link1="logical_camera1_base_link" link2="robot1_wrist_1_link" reason="Never" />
-    <disable_collisions link1="logical_camera1_base_link" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="logical_camera1_base_link" link2="robot1_wrist_3_link" reason="Never" />
-    <disable_collisions link1="logical_camera1_base_link" link2="vacuum_gripper1_base_link" reason="Never" />
     <disable_collisions link1="logical_camera1_base_link" link2="vacuum_gripper1_suction_cup" reason="Never" />
+    <disable_collisions link1="logical_camera1_base_link" link2="yellow_bin1_origin" reason="Adjacent" />
+    <disable_collisions link1="logical_camera1_base_link" link2="yellow_bin2_origin" reason="Adjacent" />
+    <disable_collisions link1="logical_camera1_base_link" link2="yellow_bin3_origin" reason="Adjacent" />
+    <disable_collisions link1="logical_camera1_base_link" link2="yellow_bin4_origin" reason="Adjacent" />
+    <disable_collisions link1="logical_camera1_base_link" link2="yellow_bin5_origin" reason="Adjacent" />
     <disable_collisions link1="robot1_base_link" link2="robot1_pedestal_link" reason="Adjacent" />
     <disable_collisions link1="robot1_base_link" link2="robot1_shoulder_link" reason="Adjacent" />
     <disable_collisions link1="robot1_base_link" link2="robot1_upper_arm_link" reason="Never" />
     <disable_collisions link1="robot1_base_link" link2="robot1_wrist_1_link" reason="Never" />
     <disable_collisions link1="robot1_base_link" link2="robot1_wrist_2_link" reason="Never" />
-    <disable_collisions link1="robot1_base_link" link2="vacuum_gripper1_suction_cup" reason="Never" />
+    <disable_collisions link1="robot1_base_link" link2="yellow_bin1_origin" reason="Never" />
+    <disable_collisions link1="robot1_base_link" link2="yellow_bin2_origin" reason="Never" />
+    <disable_collisions link1="robot1_base_link" link2="yellow_bin3_origin" reason="Never" />
+    <disable_collisions link1="robot1_base_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_base_link" link2="yellow_bin5_origin" reason="Never" />
     <disable_collisions link1="robot1_ee_link" link2="robot1_wrist_1_link" reason="Never" />
     <disable_collisions link1="robot1_ee_link" link2="robot1_wrist_2_link" reason="Never" />
     <disable_collisions link1="robot1_ee_link" link2="robot1_wrist_3_link" reason="Adjacent" />
     <disable_collisions link1="robot1_ee_link" link2="vacuum_gripper1_base_link" reason="Never" />
     <disable_collisions link1="robot1_ee_link" link2="vacuum_gripper1_suction_cup" reason="Never" />
+    <disable_collisions link1="robot1_ee_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_ee_link" link2="yellow_bin5_origin" reason="Never" />
     <disable_collisions link1="robot1_forearm_link" link2="robot1_upper_arm_link" reason="Adjacent" />
     <disable_collisions link1="robot1_forearm_link" link2="robot1_wrist_1_link" reason="Adjacent" />
+    <disable_collisions link1="robot1_forearm_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_forearm_link" link2="yellow_bin5_origin" reason="Never" />
     <disable_collisions link1="robot1_pedestal_link" link2="robot1_shoulder_link" reason="Never" />
+    <disable_collisions link1="robot1_pedestal_link" link2="yellow_bin1_origin" reason="Adjacent" />
+    <disable_collisions link1="robot1_pedestal_link" link2="yellow_bin2_origin" reason="Adjacent" />
+    <disable_collisions link1="robot1_pedestal_link" link2="yellow_bin3_origin" reason="Adjacent" />
+    <disable_collisions link1="robot1_pedestal_link" link2="yellow_bin4_origin" reason="Adjacent" />
+    <disable_collisions link1="robot1_pedestal_link" link2="yellow_bin5_origin" reason="Adjacent" />
     <disable_collisions link1="robot1_shoulder_link" link2="robot1_upper_arm_link" reason="Adjacent" />
     <disable_collisions link1="robot1_shoulder_link" link2="robot1_wrist_1_link" reason="Never" />
     <disable_collisions link1="robot1_shoulder_link" link2="robot1_wrist_2_link" reason="Never" />
+    <disable_collisions link1="robot1_shoulder_link" link2="yellow_bin1_origin" reason="Never" />
+    <disable_collisions link1="robot1_shoulder_link" link2="yellow_bin2_origin" reason="Never" />
+    <disable_collisions link1="robot1_shoulder_link" link2="yellow_bin3_origin" reason="Never" />
+    <disable_collisions link1="robot1_shoulder_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_shoulder_link" link2="yellow_bin5_origin" reason="Never" />
+    <disable_collisions link1="robot1_upper_arm_link" link2="yellow_bin1_origin" reason="Never" />
+    <disable_collisions link1="robot1_upper_arm_link" link2="yellow_bin2_origin" reason="Never" />
+    <disable_collisions link1="robot1_upper_arm_link" link2="yellow_bin3_origin" reason="Never" />
+    <disable_collisions link1="robot1_upper_arm_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_upper_arm_link" link2="yellow_bin5_origin" reason="Never" />
     <disable_collisions link1="robot1_wrist_1_link" link2="robot1_wrist_2_link" reason="Adjacent" />
     <disable_collisions link1="robot1_wrist_1_link" link2="robot1_wrist_3_link" reason="Never" />
     <disable_collisions link1="robot1_wrist_1_link" link2="vacuum_gripper1_base_link" reason="Never" />
     <disable_collisions link1="robot1_wrist_1_link" link2="vacuum_gripper1_suction_cup" reason="Never" />
+    <disable_collisions link1="robot1_wrist_1_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_wrist_1_link" link2="yellow_bin5_origin" reason="Never" />
     <disable_collisions link1="robot1_wrist_2_link" link2="robot1_wrist_3_link" reason="Adjacent" />
     <disable_collisions link1="robot1_wrist_2_link" link2="vacuum_gripper1_base_link" reason="Never" />
     <disable_collisions link1="robot1_wrist_2_link" link2="vacuum_gripper1_suction_cup" reason="Never" />
+    <disable_collisions link1="robot1_wrist_2_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_wrist_2_link" link2="yellow_bin5_origin" reason="Never" />
     <disable_collisions link1="robot1_wrist_3_link" link2="vacuum_gripper1_base_link" reason="Adjacent" />
     <disable_collisions link1="robot1_wrist_3_link" link2="vacuum_gripper1_suction_cup" reason="Never" />
+    <disable_collisions link1="robot1_wrist_3_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="robot1_wrist_3_link" link2="yellow_bin5_origin" reason="Never" />
     <disable_collisions link1="vacuum_gripper1_base_link" link2="vacuum_gripper1_suction_cup" reason="Adjacent" />
+    <disable_collisions link1="vacuum_gripper1_base_link" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="vacuum_gripper1_base_link" link2="yellow_bin5_origin" reason="Never" />
+    <disable_collisions link1="vacuum_gripper1_suction_cup" link2="yellow_bin3_origin" reason="Never" />
+    <disable_collisions link1="vacuum_gripper1_suction_cup" link2="yellow_bin4_origin" reason="Never" />
+    <disable_collisions link1="vacuum_gripper1_suction_cup" link2="yellow_bin5_origin" reason="Never" />
+    <disable_collisions link1="yellow_bin1_origin" link2="yellow_bin2_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin1_origin" link2="yellow_bin3_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin1_origin" link2="yellow_bin4_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin1_origin" link2="yellow_bin5_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin2_origin" link2="yellow_bin3_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin2_origin" link2="yellow_bin4_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin2_origin" link2="yellow_bin5_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin3_origin" link2="yellow_bin4_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin3_origin" link2="yellow_bin5_origin" reason="Adjacent" />
+    <disable_collisions link1="yellow_bin4_origin" link2="yellow_bin5_origin" reason="Adjacent" />
 </robot>

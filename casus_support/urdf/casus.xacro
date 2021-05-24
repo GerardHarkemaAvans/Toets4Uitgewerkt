@@ -17,9 +17,9 @@
     <!-- logical camera 1 collision model -->
     <xacro:include filename="$(find casus_support)/urdf/logical_camera/logical_camera.urdf.xacro"/>
     <xacro:logical_camera_urdf prefix="logical_camera1_" logical_camera_parent="world_interface">
-    <origin xyz="0.55 0.9 1.4" rpy="0 1.5708 0"/>
+    <origin xyz="-0.74 0.32 1.2" rpy="0 1.7 0"/>
     </xacro:logical_camera_urdf>
-
+    
     <!-- Shipping Container -->
     <xacro:include filename="$(find casus_support)/urdf/shipping_container/shipping_container.urdf.xacro"/>
     <xacro:shipping_container_urdf shipping_container_prefix="container1_" shipping_container_parent="world_interface">
@@ -30,8 +30,34 @@
     <!-- shipping_container_conveyor -->
     <xacro:include filename="$(find casus_support)/urdf/shipping_container_conveyor/shipping_container_conveyor.urdf.xacro"/>
     <xacro:shipping_container_conveyor_urdf shipping_container_conveyor_prefix="conveyor1_" shipping_container_conveyor_parent="world_interface">
-    <origin xyz="0.04 -1 0.0" rpy="0 0 0"/>
+    <origin xyz="0.04 -1 0.13" rpy="0 0 0"/>
     </xacro:shipping_container_conveyor_urdf>
+
+    <!-- yellow_bin 1 -->
+    <xacro:include filename="$(find casus_support)/urdf/yellow_bin/yellow_bin.urdf.xacro"/>
+    <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin1_" yellow_bin_parent="world_interface">
+    <origin xyz="-0.95 -0.49 0.95" rpy="0 -0.19 3.14"/>
+    </xacro:yellow_bin_urdf>
+
+    <!-- yellow_bin 2 -->
+    <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin2_" yellow_bin_parent="world_interface">
+    <origin xyz="-0.95 0.32 0.95" rpy="0 -0.19 3.14"/>
+    </xacro:yellow_bin_urdf>
+    
+    <!-- yellow_bin 3 -->
+    <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin3_" yellow_bin_parent="world_interface">
+    <origin xyz="-0.95 1.13 0.95" rpy="0 -0.19 3.14"/>
+    </xacro:yellow_bin_urdf>
+
+    <!-- yellow_bin 4 -->
+    <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin4_" yellow_bin_parent="world_interface">
+    <origin xyz="-0.95 1.94 0.95" rpy="0 -0.19 3.14"/>
+    </xacro:yellow_bin_urdf>
+    
+     <!-- yellow_bin 5 -->
+    <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin5_" yellow_bin_parent="world_interface">
+    <origin xyz="-0.95 2.75 0.95" rpy="0 -0.19 3.14"/>
+    </xacro:yellow_bin_urdf>
 
     <!-- Robot1 Pedestal -->
     <xacro:include filename="$(find casus_support)/urdf/robot_pedestal/robot_pedestal.urdf.xacro"/>
@@ -40,8 +66,8 @@
     </xacro:robot_pedestal_urdf>
 
     <!-- Robot1 -->
-    <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro"/>
-    <xacro:ur5_robot prefix="robot1_" joint_limited="true"/>
+    <xacro:include filename="$(find ur_description)/urdf/ur10.urdf.xacro"/>
+    <xacro:ur10_robot prefix="robot1_" joint_limited="true"/>
 
     <!-- Vacuum Gripper1 -->
     <xacro:include filename="$(find casus_support)/urdf/vacuum_gripper/vacuum_gripper.urdf.xacro"/>
@@ -50,7 +76,7 @@
 
     <!-- robot1 to pedestal. -->
     <joint name="robot1_to_pedestal" type="fixed">
-        <origin xyz="0 0 0.6" rpy="0 0 -1.57" />
+        <origin xyz="0 0 0.6" rpy="0 0 1.57" />
         <parent link="robot1_pedestal_link" />
         <child link="robot1_base_link" />
     </joint>

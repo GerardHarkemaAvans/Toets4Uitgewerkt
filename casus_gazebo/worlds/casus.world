@@ -1729,16 +1729,6 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='logical_camera_1'>
-        <pose frame=''>0.55 0.9 1.4 3.14159 1.57079 3.14159</pose>
-        <scale>1 1 1</scale>
-        <link name='logical_camera_1_link'>
-          <pose frame=''>0.55 0.9 1.4 3.14159 1.57079 3.14159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='shipping_box_1'>
         <pose frame=''>0.549997 3.99912 0.587781 8.4e-05 0 3e-06</pose>
         <scale>1 1 1</scale>
@@ -1790,7 +1780,10 @@
     <!-- Add Camera Here -->
     <include>
       <uri>model://logical_camera1</uri>
-    <pose>0.55 0.9 1.4 0 1.5708 0</pose>
+<!--
+      <pose>0.55 0.9 1.4 0 1.5708 0</pose>
+-->
+      <pose>-0.74 0.32 1.2 0 1.7 0</pose>
     </include>
     
   </world>

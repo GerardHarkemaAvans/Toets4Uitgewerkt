@@ -48,7 +48,7 @@
 
   <!-- Spawn parts -->
   <node pkg="casus_utilities" type="timed_roslaunch.sh" name="timed_roslaunch_parts" output="screen"
-    args="4 casus_gazebo spawn_parts_casus5.launch" />
+    args="4 casus_gazebo spawn_parts.launch" />
 
   <!-- Reset World -->
   <node pkg="casus_utilities" type="timed_roslaunch.sh" name="reset_world" output="screen"

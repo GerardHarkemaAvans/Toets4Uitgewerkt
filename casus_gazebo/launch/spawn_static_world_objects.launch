@@ -7,7 +7,7 @@
   <arg name="robot_prefix" value="robot1_"/>
   <arg name="robot_pedestal" value="robot1_pedestal_"/>
   <arg name="vacuum_gripper_prefix" value="vacuum_gripper1_"/>
-  <arg name="bin" value="bin_"/>
+  <arg name="bin1" value="bin1_"/>
   <arg name="as" value="as_"/>
   <arg name="fs1" value="fs1_"/>
   <arg name="fs2" value="fs2_"/>
@@ -24,5 +24,14 @@
     
       <node name="$(arg robot_pedestal)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
     args="-x 0 -y 0 -urdf -model $(arg robot_pedestal) -param $(arg robot_pedestal)description"/>
+
+  <!-- Yellow bin -->
+<!--
+  <param name="$(arg bin1)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/yellow_bin/yellow_bin.xacro' yellow_bin_prefix:=$(arg bin1) yellow_bin_parent:=$(arg workshop_parent_name)"/>
+    
+      <node name="$(arg bin1)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x -0.775 -y -0.49 -z 0.75 -P -0.19 -Y 3.14 -urdf -model $(arg bin1) -param $(arg bin1)description"/>
+-->
 
 </launch>
