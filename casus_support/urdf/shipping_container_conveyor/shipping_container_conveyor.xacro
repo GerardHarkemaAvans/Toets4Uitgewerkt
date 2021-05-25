@@ -15,11 +15,11 @@
 
 
   <!-- URDF -->
-  <xacro:include filename="$(find casus_support)/urdf/shipping_container_conveyor_mobile/shipping_container_conveyor.urdf.xacro"/>
+  <xacro:include filename="$(find casus_support)/urdf/shipping_container_conveyor/shipping_container_conveyor.urdf.xacro"/>
   <xacro:shipping_container_conveyor_urdf shipping_container_conveyor_prefix="$(arg shipping_container_conveyor_prefix)" shipping_container_conveyor_parent="$(arg shipping_container_conveyor_parent)">
      <origin xyz="$(arg x) $(arg y) $(arg z)" rpy="$(arg R) $(arg P) $(arg Y)"/>
   </xacro:shipping_container_conveyor_urdf>
 
   <!-- Gazebo -->
-  <xacro:include filename="$(find casus_support)/urdf/shipping_container_conveyor_mobile/shipping_container_conveyor.gazebo.xacro"/>
+  <xacro:include filename="$(find casus_support)/urdf/shipping_container_conveyor/shipping_container_conveyor.gazebo.xacro"/>
 </robot>

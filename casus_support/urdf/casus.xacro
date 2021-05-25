@@ -17,46 +17,47 @@
     <!-- logical camera 1 collision model -->
     <xacro:include filename="$(find casus_support)/urdf/logical_camera/logical_camera.urdf.xacro"/>
     <xacro:logical_camera_urdf prefix="logical_camera1_" logical_camera_parent="world_interface">
-    <origin xyz="-0.74 0.32 1.2" rpy="0 1.7 0"/>
+    <origin xyz="-0.95 0.32 1.25" rpy="3.14 2 3.14"/>
     </xacro:logical_camera_urdf>
     
+    
     <!-- Shipping Container -->
-    <xacro:include filename="$(find casus_support)/urdf/shipping_container/shipping_container.urdf.xacro"/>
-    <xacro:shipping_container_urdf shipping_container_prefix="container1_" shipping_container_parent="world_interface">
+    <xacro:include filename="$(find casus_support)/urdf/shipping_container_short/shipping_container_short.urdf.xacro"/>
+    <xacro:shipping_container_short_urdf shipping_container_short_prefix="container1_" shipping_container_short_parent="world_interface">
     <origin xyz="0.275 -1 0.0" rpy="0 0 0"/>
-    </xacro:shipping_container_urdf>
+    </xacro:shipping_container_short_urdf>
 
 
     <!-- shipping_container_conveyor -->
-    <xacro:include filename="$(find casus_support)/urdf/shipping_container_conveyor/shipping_container_conveyor.urdf.xacro"/>
-    <xacro:shipping_container_conveyor_urdf shipping_container_conveyor_prefix="conveyor1_" shipping_container_conveyor_parent="world_interface">
-    <origin xyz="0.04 -1 0.13" rpy="0 0 0"/>
-    </xacro:shipping_container_conveyor_urdf>
+    <xacro:include filename="$(find casus_support)/urdf/shipping_container_conveyor_tall/shipping_container_conveyor_tall.urdf.xacro"/>
+    <xacro:shipping_container_conveyor_tall_urdf shipping_container_conveyor_tall_prefix="conveyor1_" shipping_container_conveyor_tall_parent="world_interface">
+    <origin xyz="0.04 -1 0" rpy="0 0 0"/>
+    </xacro:shipping_container_conveyor_tall_urdf>
 
     <!-- yellow_bin 1 -->
     <xacro:include filename="$(find casus_support)/urdf/yellow_bin/yellow_bin.urdf.xacro"/>
     <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin1_" yellow_bin_parent="world_interface">
-    <origin xyz="-0.95 -0.49 0.95" rpy="0 -0.19 3.14"/>
+    <origin xyz="-0.775 -0.49 0.75" rpy="0 -0.19 3.14"/>
     </xacro:yellow_bin_urdf>
 
     <!-- yellow_bin 2 -->
     <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin2_" yellow_bin_parent="world_interface">
-    <origin xyz="-0.95 0.32 0.95" rpy="0 -0.19 3.14"/>
+    <origin xyz="-0.775 0.32 0.75" rpy="0 -0.19 3.14"/>
     </xacro:yellow_bin_urdf>
     
     <!-- yellow_bin 3 -->
     <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin3_" yellow_bin_parent="world_interface">
-    <origin xyz="-0.95 1.13 0.95" rpy="0 -0.19 3.14"/>
+    <origin xyz="-0.775 1.13 0.75" rpy="0 -0.19 3.14"/>
     </xacro:yellow_bin_urdf>
 
     <!-- yellow_bin 4 -->
     <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin4_" yellow_bin_parent="world_interface">
-    <origin xyz="-0.95 1.94 0.95" rpy="0 -0.19 3.14"/>
+    <origin xyz="-0.775 1.94 0.75" rpy="0 -0.19 3.14"/>
     </xacro:yellow_bin_urdf>
     
      <!-- yellow_bin 5 -->
     <xacro:yellow_bin_urdf yellow_bin_prefix="yellow_bin5_" yellow_bin_parent="world_interface">
-    <origin xyz="-0.95 2.75 0.95" rpy="0 -0.19 3.14"/>
+    <origin xyz="-0.775 2.75 0.75" rpy="0 -0.19 3.14"/>
     </xacro:yellow_bin_urdf>
 
     <!-- Robot1 Pedestal -->

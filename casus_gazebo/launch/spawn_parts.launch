@@ -3,17 +3,17 @@
 
 
   <node name="gear_part_0_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
-    args="-x -775 -y 0.32 -z 1.00 -sdf -model gear_part_0 -file $(find casus_support)/meshes/part/gear_part/model.sdf"/>
+    args="-x -0.775 -y 0.32 -z 1.00 -sdf -model gear_part_0 -file $(find casus_support)/meshes/part/gear_part/model.sdf"/>
 
 
   <node name="gasket_part_0_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
-    args="-x -775 -y 1.13 -z 1.00 -sdf -model gasket_part_0 -file $(find casus_support)/meshes/part/gasket_part/model.sdf"/>
+    args="-x -0.775 -y 1.13 -z 1.00 -sdf -model gasket_part_0 -file $(find casus_support)/meshes/part/gasket_part/model.sdf"/>
 
   <node name="pulley_part_0_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
-    args="-x -775 -y 1.94 -z 1.00 -sdf -model pulley_part_0 -file $(find casus_support)/meshes/part/pulley_part/model.sdf"/>
+    args="-x -0.775 -y 1.94 -z 1.00 -sdf -model pulley_part_0 -file $(find casus_support)/meshes/part/pulley_part/model.sdf"/>
 
   <node name="piston_rod_part_0_spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
-    args="-x -775 -y 2.75 -z 1.00 -sdf -model piston_rod_part_0 -file $(find casus_support)/meshes/part/piston_rod_part/model.sdf"/>
+    args="-x -0.775 -y 2.75 -z 1.00 -sdf -model piston_rod_part_0 -file $(find casus_support)/meshes/part/piston_rod_part/model.sdf"/>
 
 
 </launch>

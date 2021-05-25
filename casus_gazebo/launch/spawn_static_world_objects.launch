@@ -8,12 +8,13 @@
   <arg name="robot_pedestal" value="robot1_pedestal_"/>
   <arg name="vacuum_gripper_prefix" value="vacuum_gripper1_"/>
   <arg name="bin1" value="bin1_"/>
-  <arg name="as" value="as_"/>
-  <arg name="fs1" value="fs1_"/>
-  <arg name="fs2" value="fs2_"/>
-  <arg name="fc" value="fc_"/>
-  <arg name="dc" value="dc_"/>
-  <arg name="mc" value="mc_"/>
+  <arg name="bin2" value="bin2_"/>
+  <arg name="bin3" value="bin3_"/>
+  <arg name="bin4" value="bin4_"/>
+  <arg name="bin5" value="bin5_"/>
+  <arg name="container" value="container_"/>
+  <arg name="conveyor" value="conveyor_"/>
+
 
   <!-- Parameters and nodes in the global namespace. -->
 
@@ -25,13 +26,54 @@
       <node name="$(arg robot_pedestal)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
     args="-x 0 -y 0 -urdf -model $(arg robot_pedestal) -param $(arg robot_pedestal)description"/>
 
-  <!-- Yellow bin -->
-<!--
+  <!-- Shipping container -->
+  <param name="$(arg container)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/shipping_container_short/shipping_container_short.xacro' shipping_container_short_prefix:=$(arg container) shipping_container_short_parent:=$(arg workshop_parent_name)"/>
+    
+      <node name="$(arg container)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x 0.275 -y -1  -urdf -model $(arg container) -param $(arg container)description"/> 
+
+  <!-- conveyor -->
+  <param name="$(arg conveyor)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/shipping_container_conveyor_tall/shipping_container_conveyor_tall.xacro' shipping_container_conveyor_tall_prefix:=$(arg conveyor) shipping_container_conveyor_tall_parent:=$(arg workshop_parent_name)"/>
+    
+      <node name="$(arg conveyor)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x 0.04 -y -1  -urdf -model $(arg conveyor) -param $(arg conveyor)description"/> 
+  <!-- conveyor -->
+
+  <!-- Yellow bin1 -->
   <param name="$(arg bin1)description"
     command="$(find xacro)/xacro '$(find casus_support)/urdf/yellow_bin/yellow_bin.xacro' yellow_bin_prefix:=$(arg bin1) yellow_bin_parent:=$(arg workshop_parent_name)"/>
     
       <node name="$(arg bin1)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
     args="-x -0.775 -y -0.49 -z 0.75 -P -0.19 -Y 3.14 -urdf -model $(arg bin1) -param $(arg bin1)description"/>
--->
 
+  <!-- Yellow bin2 -->
+  <param name="$(arg bin2)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/yellow_bin/yellow_bin.xacro' yellow_bin_prefix:=$(arg bin2) yellow_bin_parent:=$(arg workshop_parent_name)"/>
+    
+      <node name="$(arg bin2)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x -0.775 -y 0.32 -z 0.75 -P -0.19 -Y 3.14 -urdf -model $(arg bin2) -param $(arg bin2)description"/>
+
+  <!-- Yellow bin3 -->
+  <param name="$(arg bin3)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/yellow_bin/yellow_bin.xacro' yellow_bin_prefix:=$(arg bin3) yellow_bin_parent:=$(arg workshop_parent_name)"/>
+    
+      <node name="$(arg bin3)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x -0.775 -y 1.13 -z 0.75 -P -0.19 -Y 3.14 -urdf -model $(arg bin3) -param $(arg bin3)description"/>
+
+  <!-- Yellow bin4 -->
+  <param name="$(arg bin4)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/yellow_bin/yellow_bin.xacro' yellow_bin_prefix:=$(arg bin4) yellow_bin_parent:=$(arg workshop_parent_name)"/>
+    
+      <node name="$(arg bin4)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x -0.775 -y 1.94 -z 0.75 -P -0.19 -Y 3.14 -urdf -model $(arg bin4) -param $(arg bin4)description"/>
+
+  <!-- Yellow bin5 -->
+  <param name="$(arg bin5)description"
+    command="$(find xacro)/xacro '$(find casus_support)/urdf/yellow_bin/yellow_bin.xacro' yellow_bin_prefix:=$(arg bin5) yellow_bin_parent:=$(arg workshop_parent_name)"/>
+    
+      <node name="$(arg bin5)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x -0.775 -y 2.75 -z 0.75 -P -0.19 -Y 3.14 -urdf -model $(arg bin5) -param $(arg bin5)description"/>
+    
 </launch>
